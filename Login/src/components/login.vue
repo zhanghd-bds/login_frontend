@@ -48,6 +48,18 @@
 
         },
         methods:{
+            initWebSocket(){
+                let websocket = new WebSocket("ws://192.168.107.181:9000/websocketdemo-0.0.1-SNAPSHOT/websocket/aaa");
+                websocket.onopen = function(){
+                    console.log("Socket已打开");
+                }
+                websocket.onclose = function(){
+                    console.log("Socket已关闭");
+                }
+                websocket.onerror = function () {
+                    console.log("Socket发生错误");
+                }
+            },
             handleSubmit(name){
                 let params = {
                     loginName:this.loginVailData.loginName,
@@ -97,6 +109,9 @@
                 // })
             },
         },
+        created() {
+            this.initWebSocket();
+        }
     }
 </script>
 

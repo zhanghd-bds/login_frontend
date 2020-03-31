@@ -8,10 +8,12 @@
 
 <script>
     import login from '@/components/login.vue'
+    import slidePage  from "./view/slidePage";
 export default {
   name: 'App',
     components:{
-      login,
+      // login,
+        slidePage
     },
 }
 </script>
@@ -23,6 +25,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
+  overflow: auto;
+
 }
+  html,body,#app{
+    height: 100%;
+    width:100%;
+  }
 </style>
